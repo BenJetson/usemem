@@ -9,10 +9,17 @@ the user wants to reserve. An excess block will be allocated if necessary to
 contain the extra megabytes of data that do not fit in the block size.
 
 These blocks of memory will be filled with random data read from 
-`/dev/urandom`.
+`/dev/urandom`. The random data should prevent the operating system from
+applying a meaningful amount of compression on this space.
 
 To try and prevent the allocated space from being swapped, the program uses
 `mlock` to keep the data resident in memory.
+
+## Why would I use this?
+
+The intended purpose for this utility is testing cgroup memory limits. For 
+example, to make sure that PBS or SLURM is enforcing your requested memory 
+allocation on HPC clusters.
 
 ## Compiling
 
