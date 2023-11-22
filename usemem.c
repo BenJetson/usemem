@@ -59,7 +59,7 @@ int main(int argc, char **argv)
     if (excessBlockSizeInMb > 0)
     {
         printf("allocating excess of %d megabytes\n", excessBlockSizeInMb);
-        excessBlock = calloc(1, excessBlockSizeInBytes);
+        excessBlock = malloc(excessBlockSizeInBytes);
         read(urandomFd, excessBlock, excessBlockSizeInBytes);
         mlock(excessBlock, excessBlockSizeInBytes);
     }
