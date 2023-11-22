@@ -15,7 +15,7 @@ applying a meaningful amount of compression on this space.
 To try and prevent the allocated space from being swapped, the program uses
 `mlock` to keep the data resident in memory.
 
-## Why would I use this?
+## Purpose
 
 The intended purpose for this utility is testing cgroup memory limits. For 
 example, to make sure that PBS or SLURM is enforcing your requested memory 
