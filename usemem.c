@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 
         printf("allocating block %d of %d\n", i + 1, numBlocks);
 
-        blocks[i] = calloc(1, blockSizeInBytes);
+        blocks[i] = malloc(blockSizeInBytes);
         read(urandomFd, blocks[i], blockSizeInBytes);
         mlock(blocks[i], blockSizeInBytes);
     }
