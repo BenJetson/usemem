@@ -17,7 +17,7 @@ To try and prevent the allocated space from being swapped, the program uses
 ## Compiling
 
 ```sh
-$ gcc -Wall -o usemem usemem.c
+gcc -Wall -o usemem usemem.c
 ```
 
 ## Usage
